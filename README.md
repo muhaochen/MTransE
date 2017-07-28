@@ -34,8 +34,8 @@ Muhao Chen, Yingtao Tian, Mohan Yang, Carlo Zaniolo. Multilingual Knowledge Grap
     @inproceedings{chen2017multigraph,
         title={Multilingual Knowledge Graph Embeddings for Cross-lingual Knowledge Alignment},
         author={Chen, Muhao and Tian, Yingtao and Yang, Mohan and Zaniolo, Carlo},
-        booktitle={Fuzzy Systems (FUZZ-IEEE), 2016 IEEE International Conference on},
-        year={2016}
+        booktitle={Proceedings of the 26th International Joint Conference on Artificial Intelligence (IJCAI)},
+        year={2017}
     }
    
     
