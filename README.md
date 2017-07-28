@@ -13,10 +13,15 @@ Install the dependents using:
 
 ## Run the experiments
 Please first download the data sets:
+
 http://yellowstone.cs.ucla.edu/~muhao/MTransE/data.zip
+
 and pretrained models
+
 http://yellowstone.cs.ucla.edu/~muhao/MTransE/models.zip
+
 Unpack these two folders to the local clone of the repository.
+
 To run the experiments on WK3l (wikipedia graphs), use:
 
     ./run_wk3l.sh
