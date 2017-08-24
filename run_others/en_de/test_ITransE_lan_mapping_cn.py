@@ -1,19 +1,20 @@
 import sys
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '../../src/MMTransE'))
+new_path = os.path.join(os.path.dirname(__file__), '../../src/ITransE')
+sys.path.append(new_path)
 
-from MMTransE import MMTransE
+from ITransE import ITransE
 import time
 import multiprocessing
 from multiprocessing import Process, Value, Lock, Manager, Array
 import numpy as np
 from numpy import linalg as LA
 
-fmap = os.path.join(os.path.dirname(__file__), '../../data/WK3l-120k/en_de/en2de_fk_120k.csv')
-fmap2 = os.path.join(os.path.dirname(__file__), '../../data/WK3l-120k/en_de/de2en_fk_120k.csv')
-fmodel = os.path.join(os.path.dirname(__file__), '../../models/en_de/model_MMtransE_person_120k_ed.bin')
-ofile1 = os.path.join(os.path.dirname(__file__), '../../results/P_test_en2de_score_MM_120k.txt')
-ofile4 = os.path.join(os.path.dirname(__file__), '../../results/P_test_de2en_score_MM_120k.txt')
+fmap = os.path.join(os.path.dirname(__file__), '../../data/CN3l/en_de/en2de_cn.csv')
+fmap2 = os.path.join(os.path.dirname(__file__), '../../data/CN3l/en_de/de2en_cn.csv')
+fmodel = os.path.join(os.path.dirname(__file__), '../../models/en_de/model_ItransE_cn_ed.bin')
+ofile1 = os.path.join(os.path.dirname(__file__), '../../results/C_test_en2de_score_I.txt')
+ofile4 = os.path.join(os.path.dirname(__file__), '../../results/C_test_de2en_score_I.txt')
 
 
 
@@ -25,7 +26,7 @@ vocab_f = []
 
 topK = 10
 
-model = MMTransE()
+model = ITransE()
 model.load(fmodel)
 
 def seem_hit(x, y):
@@ -137,9 +138,9 @@ with open(ofile1, 'w') as fp:
     for s in score[0]:
         fp.write(str(s) + '\t')
 
-print 'Finished testing en to fr'
+print 'Finished testing en to de'
 
-#fr:...
+#de:...
 manager = Manager()
 past_num = Value('i', 0, lock=True)
 score = manager.list()#store hit @ k
@@ -158,4 +159,4 @@ with open(ofile4, 'w') as fp:
     for s in score[0]:
         fp.write(str(s) + '\t')
 
-print 'Finished testing fr to en'
+print 'Finished testing de to en'

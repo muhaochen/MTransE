@@ -1,6 +1,6 @@
 import sys
-if '../../src/MMTransE' not in sys.path:
-    sys.path.append('../../src/MMTransE')
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../src/MMTransE'))
 
 from MMTransE import MMTransE
 import time
@@ -9,11 +9,11 @@ from multiprocessing import Process, Value, Lock, Manager, Array
 import numpy as np
 from numpy import linalg as LA
 
-fmap = '../../data/WK3l-120k/en_fr/en2fr_fk_120k.csv'
-fmap2 = '../../data/WK3l-120k/en_fr/fr2en_fk_120k.csv'
-fmodel = '../../models/en_fr/model_MMtransE_person_120k.bin'
-ofile1 = '../../results/P_test_en2fr_score_MM_120k.txt'
-ofile4 = '../../results/P_test_fr2en_score_MM_120k.txt'
+fmap = os.path.join(os.path.dirname(__file__), '../../data/WK3l-120k/en_fr/en2fr_fk_120k.csv')
+fmap2 = os.path.join(os.path.dirname(__file__), '../../data/WK3l-120k/en_fr/fr2en_fk_120k.csv')
+fmodel = os.path.join(os.path.dirname(__file__), '../../models/en_fr/model_MMtransE_person_120k.bin')
+ofile1 = os.path.join(os.path.dirname(__file__), '../../results/P_test_en2fr_score_MM_120k.txt')
+ofile4 = os.path.join(os.path.dirname(__file__), '../../results/P_test_fr2en_score_MM_120k.txt')
 
 
 

@@ -1,0 +1,10 @@
+# En-Fr
+cd en_fr
+python train_ItransE_15k.py
+python train_ItransE_120k.py
+python train_ItransE_cn.py
+# En-De
+cd ../en_de
+python train_ItransE_15k.py
+python train_ItransE_120k.py
+python train_ItransE_cn.py

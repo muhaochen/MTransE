@@ -1,6 +1,7 @@
 import sys
-sys.path.insert(0, '../TransE')
-sys.path.insert(0, '../common')
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../TransE'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../common'))
 from utils import random_orthogonal_matrix
 from TransE import TransE
 import numpy as np
@@ -13,7 +14,6 @@ import pickle
 import heapq as HP
 from scipy import spatial as SP
 
-#removed SGD for r on intersect graph
 class MMTransE(object):
     def __init__(self, dim = 100, save_dir = 'model_MtransE.bin'):
         self.dim = dim
@@ -90,29 +90,6 @@ class MMTransE(object):
         d_v_e2 = - 2.0 * f_res
         d_tr = 2.0 * np.dot(v_e1[:, np.newaxis], f_res[np.newaxis, :])
 
-        '''
-        print('GD')
-        print('norm: f_res: ', LA.norm(f_res))
-        print('norm: d_v_e1: ', LA.norm(d_v_e1))
-        print('norm: d_v_e2: ', LA.norm(d_v_e2))
-        print('norm: d_tr: ', LA.norm(d_tr))
-        '''
-        '''if L1:
-            for x in np.nditer(d_v_e1, op_flags=['readwrite']):
-                if x > 0:
-                    x[...] = 1
-                else:
-                    x[...] = -1
-            for x in np.nditer(d_v_e2, op_flags=['readwrite']):
-                if x > 0:
-                    x[...] = 1
-                else:
-                    x[...] = -1
-            for x in np.nditer(d_tr, op_flags=['readwrite']):
-                if x > 0:
-                    x[...] = 1
-                else:
-                    x[...] = -1'''
         v_e1 -= d_v_e1 * self.rate
         v_e2 -= d_v_e2 * self.rate
         tr -= d_tr * self.rate
@@ -151,12 +128,6 @@ class MMTransE(object):
                     sum += self.gradient_decent(this_transfer, self.models[l_left].vec_e[line[i][0]], self.models[l_right].vec_e[line[j][0]], const_decay, L1)
                     sum += self.gradient_decent(this_transfer, self.models[l_left].vec_e[line[i][2]], self.models[l_right].vec_e[line[j][2]], const_decay, L1)
                     sum += self.gradient_decent(this_transfer, self.models[l_left].vec_r[line[i][1]], self.models[l_right].vec_r[line[j][1]], const_decay, L1)
-            #save invert matrices
-            '''for i in range(len(self.languages)-1):
-                for j in range(i+1, len(self.languages)):
-                    l_left = self.languages[i]
-                    l_right = self.languages[j]
-                    self.transfer[l_right + l_left] = LA.inv(self.transfer[l_left + l_right])'''
         return sum
     def Train_MT(self, epochs=100, tol=50.0, rate=0.05, save_every_epochs=0, save_dir = None, languages=['en', 'fr'], graphs=['../person/P_en_v3.csv','../person/P_fr_v3.csv'], intersect_graph='../person/P_en_fr_v3.csv', save_dirs = ['model_en.bin','model_fr.bin'], splitter='@@@', line_end='\n', split_rate=True, L1_flag=False):
         if save_dir != None:
