@@ -12,7 +12,7 @@ from numpy import linalg as LA
 
 fmap = os.path.join(os.path.dirname(__file__), '../../data/CN3l/en_de/en2de_cn.csv')
 fmap2 = os.path.join(os.path.dirname(__file__), '../../data/CN3l/en_de/de2en_cn.csv')
-fmodel = os.path.join(os.path.dirname(__file__), '../../models/en_de/model_ItransE_cn_ed.bin')
+fmodel = os.path.join(os.path.dirname(__file__), 'model_ItransE_cn_ed.bin')
 ofile1 = os.path.join(os.path.dirname(__file__), '../../results/C_test_en2de_score_I.txt')
 ofile4 = os.path.join(os.path.dirname(__file__), '../../results/C_test_de2en_score_I.txt')
 
