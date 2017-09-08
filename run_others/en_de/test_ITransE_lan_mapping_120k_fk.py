@@ -114,13 +114,13 @@ def test(model, vocab, index, src_lan, tgt_lan, map, score, past_num):
         vec_s = model.entity_transfer_vec(word, src_lan, tgt_lan)
         for tmp_vec in tgt:
             tmp_vec_t = model.entity_vec(tmp_vec, tgt_lan)
-            if tmp_vec_t == None:
+            if tmp_vec_t is None:
                 continue
             cur_dist = LA.norm(tmp_vec_t - vec_s)
             if cur_dist < tmp_dist:
                 tmp_dist = cur_dist
                 vec_t = tmp_vec_t
-        if vec_t == None:
+        if vec_t is None:
             continue
         cur_rank = model.entity_rank(vec_s, vec_t, tgt_lan)
         rank.value = (rank.value * rank_num.value + cur_rank) / (rank_num.value + 1)
