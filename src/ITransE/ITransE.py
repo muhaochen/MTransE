@@ -76,6 +76,7 @@ class ITransE(object):
         self.seeds = np.array([x for x in self.seeds])
         self.intersect_triples = np.array(triples, dtype=np.int)
         self.intersect_index = np.array(range(len(self.seeds)), dtype=np.int)
+        self.train_intersect_1epoch()
         print "Loaded intersect graph. size ",len(self.intersect_triples)
     
     def align_seed(self, v_e1, v_e2):
@@ -108,7 +109,7 @@ class ITransE(object):
             sum += self.align_seed(self.models[l_left].vec_e[line[0]], self.models[l_right].vec_e[line[1]])
             return sum
 
-    def Train_MT(self, epochs=100, tol=50.0, rate=0.05, save_every_epochs=0, save_dir = None, languages=['en', 'fr'], graphs=['../person/P_en_v3.csv','../person/P_fr_v3.csv'], intersect_graph='../person/P_en_fr_v3.csv', save_dirs = ['model_en.bin','model_fr.bin'], splitter='@@@', line_end='\n', split_rate=True, L1_flag=False, align_every_epochs=50):
+    def Train_MT(self, epochs=100, tol=50.0, rate=0.05, save_every_epochs=0, save_dir = None, languages=['en', 'fr'], graphs=['../person/P_en_v3.csv','../person/P_fr_v3.csv'], intersect_graph='../person/P_en_fr_v3.csv', save_dirs = ['model_en.bin','model_fr.bin'], splitter='@@@', line_end='\n', split_rate=True, L1_flag=False, align_every_epochs=2):
         if save_dir != None:
             self.save_dir = save_dir
         self.rate = rate
