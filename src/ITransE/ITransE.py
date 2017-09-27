@@ -29,7 +29,8 @@ class ITransE(object):
         #intersect graph
         self.intersect_triples = np.array([0])
         #alignment seeds for ITransE
-        self.seeds = set([])
+        self.seeds = {}
+        self.seeds_pair = set([])
         #shuffle index for intersect triples
         self.intersect_index = np.array([0])
     
@@ -56,6 +57,8 @@ class ITransE(object):
             self.triples[lan] = triples
             print "Loaded graph for [",lan,"] size ",len(self.triples[lan])
         triples = []
+        for l in languages:
+            self.seeds[l] = {}
         for line in open(intersect_graph):
             line = line.rstrip(line_end).split(splitter)
             tmp_line = []
@@ -71,45 +74,19 @@ class ITransE(object):
                 tmp_line.append([h, r, t])
             if suc == True: #every thing in this line are contained in the vocabs of models of corresponding languages
                 triples.append(tmp_line)
-                self.seeds.add((tmp_line[0][0], tmp_line[1][0]))
-                self.seeds.add((tmp_line[0][2], tmp_line[1][2]))
-        self.seeds = np.array([x for x in self.seeds])
+                self.seeds_pair.add((tmp_line[0][0], tmp_line[1][0]))
+                self.seeds[self.languages[0]][tmp_line[0][0]] = tmp_line[1][0]
+                self.seeds[self.languages[1]][tmp_line[1][0]] = tmp_line[0][0]
+                #self.seeds.add((tmp_line[0][2], tmp_line[1][2]))
+                self.seeds[self.languages[0]][tmp_line[0][2]] = tmp_line[1][2]
+                self.seeds[self.languages[1]][tmp_line[1][2]] = tmp_line[0][2]
         self.intersect_triples = np.array(triples, dtype=np.int)
-        self.intersect_index = np.array(range(len(self.seeds)), dtype=np.int)
-        self.train_intersect_1epoch()
+        #self.intersect_index = np.array(range(len([x for x in self.seeds[self.languages[0]].iteritems()])), dtype=np.int)
+        for pair in self.seeds_pair:
+            self.models[self.languages[0]].vec_e[pair[0]] = self.models[self.languages[1]].vec_e[pair[1]]
         print "Loaded intersect graph. size ",len(self.intersect_triples)
-    
-    def align_seed(self, v_e1, v_e2):
 
-        assert len(v_e1.shape) == 1
-        assert v_e1.shape == v_e2.shape
-        v_e1 = v_e2
-        v_e1 /= LA.norm(v_e1)
-        v_e2 /= LA.norm(v_e2)
-        return 0.
-
-    def train_intersect_1epoch(self, shuffle=True, const_decay=1.0, sampling=False, L1=False):
-        num_lan = len(self.languages)
-        sum = 0.0
-        count = 0
-        index = None
-        if shuffle == True:
-            RD.shuffle(self.intersect_index)
-            index = self.intersect_index
-        else:
-            index = range(len(self.intersect_index))
-        for x in index:
-            line = self.seeds[x]
-            count += 1
-            if count % 1000 == 0:
-                print "Scanned ",count," on seeds"
-
-            l_left = self.languages[0]
-            l_right = self.languages[1]
-            sum += self.align_seed(self.models[l_left].vec_e[line[0]], self.models[l_right].vec_e[line[1]])
-            return sum
-
-    def Train_MT(self, epochs=100, tol=50.0, rate=0.05, save_every_epochs=0, save_dir = None, languages=['en', 'fr'], graphs=['../person/P_en_v3.csv','../person/P_fr_v3.csv'], intersect_graph='../person/P_en_fr_v3.csv', save_dirs = ['model_en.bin','model_fr.bin'], splitter='@@@', line_end='\n', split_rate=True, L1_flag=False, align_every_epochs=2):
+    def Train_MT(self, epochs=100, tol=50.0, rate=0.05, save_every_epochs=0, save_dir = None, languages=['en', 'fr'], graphs=['../person/P_en_v3.csv','../person/P_fr_v3.csv'], intersect_graph='../person/P_en_fr_v3.csv', save_dirs = ['model_en.bin','model_fr.bin'], splitter='@@@', line_end='\n', split_rate=True, L1_flag=False):
         if save_dir != None:
             self.save_dir = save_dir
         self.rate = rate
@@ -127,19 +104,16 @@ class ITransE(object):
         for lan in self.languages:
             shuffle_index[lan] = np.array(range(len(self.triples[lan])), dtype=np.int)
         # train on intersect graph once first
-        #self.train_intersect_1epoch()
         t1 = time.time()
         for i in range(self.trained_epochs + 1, self.trained_epochs + epochs + 1):
             self.trained_epochs = i
             print "Epoch ",i,":"
             for lan in self.languages:
                 RD.shuffle(shuffle_index[lan])
+            sum2 = 0.
             for x in range(len(self.languages)):
                 model = self.models[self.languages[x]]
-                model.train_1epoch(self.triples[self.languages[x]], shuffle_index[self.languages[x]], None, None, const_decays[x], L1_flag)
-            sum2 = 0.
-            if i % align_every_epochs == 0:
-                sum2 = self.train_intersect_1epoch(const_decay = const_decays[-1], L1=L1_flag)
+                model.train_1epoch_shared_param(self.triples[self.languages[x]], shuffle_index[self.languages[x]], self.seeds[self.languages[x]], self.models[self.languages[1-x]], None, None, const_decays[x], L1_flag)
             sum3 = []
             for lan in self.languages:
                 sum3.append( self.models[lan].get_loss(self.triples[lan]) )

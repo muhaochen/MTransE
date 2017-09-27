@@ -17,22 +17,6 @@ except ImportError:
     import queue as Q
 
 class TransE(object):
-    '''
-    #vocabulary of h,r,t
-    vocab_e = []
-    vocab_r = []
-    #vectors of h,r,t
-    vec_e = np.array([0]) #empty
-    vec_r = np.array([0]) #empty
-    #vocab to vector indices
-    e2vec = {}
-    r2vec = {}
-    #vector indices to vocab indices
-    vec2e = np.array([0])
-    vec2r = np.array([0])
-    #parameters
-    dim = 100 #dim of embedding
-    rate = 0.01 #learning rate'''
     
     def __init__(self, dim = 100, save_dir = 'model_test.bin'):
         self.dim = dim
@@ -282,6 +266,35 @@ class TransE(object):
                 sum += self.gradient_decent(line[0], line[1], line[2], const_decay, L1)
             else:
                 self.gradient_decent(line[0], line[1], line[2], const_decay, L1)
+        if valid_dir  != None:
+            for v in valid:
+                sum += LA.norm(self.vec_e[v[0]] + self.vec_r[v[1]] - self.vec_e[v[2]], L1)
+        return sum
+
+    def train_1epoch_shared_param(self, triples, shuffle_index, seed, counterpart_model, valid_dir=None, valid=[], const_decay=1.0, L1=False):
+        count = 0
+        sum = 0.0
+        for i in shuffle_index:
+            line = triples[i]
+            count += 1
+            if count % 100000 == 0:
+                print "Scanned ",count
+            if valid_dir  == None:
+                sum += self.gradient_decent(line[0], line[1], line[2], const_decay, L1)
+                s0 = seed.get(line[0])
+                s1 = seed.get(line[2])
+                if s0 != None:
+                    counterpart_model.vec_e[s0] = self.vec_e[line[0]]
+                if s1 != None:
+                    counterpart_model.vec_e[s1] = self.vec_e[line[2]]
+            else:
+                self.gradient_decent(line[0], line[1], line[2], const_decay, L1)
+                s0 = seed.get(line[0])
+                s1 = seed.get(line[2])
+                if s0 != None:
+                    counterpart_model.vec_e[s0] = self.vec_e[line[0]]
+                if s1 != None:
+                    counterpart_model.vec_e[s1] = self.vec_e[line[2]]
         if valid_dir  != None:
             for v in valid:
                 sum += LA.norm(self.vec_e[v[0]] + self.vec_r[v[1]] - self.vec_e[v[2]], L1)
