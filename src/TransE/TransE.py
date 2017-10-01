@@ -95,7 +95,6 @@ class TransE(object):
         self.vec_e[index_e2] -= diff
         self.vec_e[index_e1] /= LA.norm(self.vec_e[index_e1])
         self.vec_e[index_e2] /= LA.norm(self.vec_e[index_e2])
-        #self.vec_r[index_r] /= LA.norm(self.vec_r[index_r])
         # return the current L-2 norm of h + r - t
         return LA.norm(self.vec_e[index_e1] + self.vec_r[index_r] - self.vec_e[index_e2])
     
