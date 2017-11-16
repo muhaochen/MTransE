@@ -89,7 +89,7 @@ def test(model, vocab, index, src_lan, tgt_lan, map, score, past_num):
         for i in range(len(cand)):
             last_i = i
             tmp_cand = cand[i]
-            if hit == False and (seem_hit(tmp_cand, tgt) == True or tmp_cand[0] == word):
+            if hit == False and (seem_hit(tmp_cand, tgt) == True or tmp_cand == word):
                 hit = True
             if hit == True:
                 tmp_score[i] = 1.0
