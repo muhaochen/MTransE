@@ -53,4 +53,4 @@ Zhu, Hao, et al. [Iterative entity alignment via joint knowledge embeddings.](ht
 Yeo, Jinyoung, et al. [Machine-Translated Knowledge Transfer for Commonsense Causal Reasoning.](https://pdfs.semanticscholar.org/d065/0236b8cd7a693691eb479614d31a394b0c9b.pdf) AAAI. 2018.  
 Chen, Muhao, et al. [Co-training Embeddings of Knowledge Graphs and Entity Descriptions for Cross-lingual Entity Alignment.](http://www.ijcai.org/proceedings/2018/0556.pdf), IJCAI, 2018.  
 Sun, Zequn, et al. [Bootstrapping Entity Alignment with Knowledge Graph Embedding.](https://www.ijcai.org/proceedings/2018/0611.pdf) IJCAI. 2018.  
-Otani, Naoki, et al. Cross-lingual Knowledge Projection Using Machine Translation and Target-side Knowledge Base Completion. COLING, 2018.
+Otani, Naoki, et al. [Cross-lingual Knowledge Projection Using Machine Translation and Target-side Knowledge Base Completion.](http://www.aclweb.org/anthology/C18-1128) COLING, 2018.
