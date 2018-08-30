@@ -2,7 +2,7 @@
 
 This repository includes the code of MTransE var4 (see paper), links to the data sets, and pretrained models.
 
-A more recent tensorflow implementation is available at this repository: https://github.com/muhaochen/MTransE-tf (recommended), which takes in entity-level seed alignment.
+**A more recent tensorflow implementation** is available at this repository: https://github.com/muhaochen/MTransE-tf (**recommended**), which takes in entity-level seed alignment.
 ## Install
 Make sure your local environment has the following installed:
 
