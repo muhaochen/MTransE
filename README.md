@@ -55,3 +55,4 @@ Chen, Muhao, et al. [Co-training Embeddings of Knowledge Graphs and Entity Descr
 Sun, Zequn, et al. [Bootstrapping Entity Alignment with Knowledge Graph Embedding.](https://www.ijcai.org/proceedings/2018/0611.pdf) IJCAI. 2018.  
 Otani, Naoki, et al. [Cross-lingual Knowledge Projection Using Machine Translation and Target-side Knowledge Base Completion.](http://www.aclweb.org/anthology/C18-1128) COLING, 2018.  
 Wang, Zhichun, et al. [Cross-lingual Knowledge Graph Alignment via Graph Convolutional Networks.](http://aclweb.org/anthology/D18-1032) EMNLP, 2018
+[Weakly-supervised Knowledge Graph Alignment with Adversarial Learning](https://openreview.net/pdf?id=S14h9sCqYm)
