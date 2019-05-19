@@ -57,3 +57,7 @@ Otani, Naoki, et al. [Cross-lingual Knowledge Projection Using Machine Translati
 Wang, Zhichun, et al. [Cross-lingual Knowledge Graph Alignment via Graph Convolutional Networks.](http://aclweb.org/anthology/D18-1032) EMNLP, 2018.  
 Trsedya, Bayu D, et al. [Entity Alignment between Knowledge Graphs Using Attribute Embeddings.](http://www.ruizhang.info/publications/AAAI2019-Entity%20Alignment%20between%20Knowledge%20Graphs%20Using%20Attribute%20Embeddings.pdf) AAAI, 2019.  
 Qu, M., Tang, J., Bengio, Y. [Weakly-supervised Knowledge Graph Alignment with Adversarial Learning](https://openreview.net/pdf?id=S14h9sCqYm)
+Hao, J., et al. Universal Representation Learning of Knowledge Bases by Jointly Embedding Instances and Ontological Concepts. KDD, 2019 
+Guo, L., et al. [Learning to Exploit Long-term Relational Dependencies in Knowledge Graphs](https://arxiv.org/pdf/1905.04914.pdf) ICML, 2019
+Zhang, Q., et al. Multi-view Knowledge Graph Embedding for Entity Alignment. IJCAI, 2019
+Pei, C., et al. Semi-Supervised Entity Alignment via Knowledge Graph Embedding with Awareness of Degree Difference. WWW, 2019
