@@ -16,11 +16,11 @@ Install the dependents using:
 ## Run the experiments
 Please first download the data sets:
 
-http://yellowstone.cs.ucla.edu/~muhao/MTransE/data.zip
+https://drive.google.com/open?id=1AsPPU4ka1Rc9u-XYMGWtvV65hF3egi0z
 
 and pretrained models
 
-http://yellowstone.cs.ucla.edu/~muhao/MTransE/models.zip
+https://drive.google.com/open?id=17JOLNlkkBqC5q14TwBBFLpflWusqJMak
 
 Unpack these two folders to the local clone of the repository.
 
