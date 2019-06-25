@@ -59,6 +59,6 @@ Trsedya, Bayu D, et al. [Entity Alignment between Knowledge Graphs Using Attribu
 Qu, M., Tang, J., Bengio, Y. [Weakly-supervised Knowledge Graph Alignment with Adversarial Learning](https://openreview.net/pdf?id=S14h9sCqYm).  
 Hao, J., et al. [Universal Representation Learning of Knowledge Bases by Jointly Embedding Instances and Ontological Concepts.](http://yellowstone.cs.ucla.edu/~muhao/articles/KDD19_JOIE.pdf) KDD, 2019.  
 Guo, L., et al. [Learning to Exploit Long-term Relational Dependencies in Knowledge Graphs](https://arxiv.org/pdf/1905.04914.pdf). ICML, 2019.  
-Zhang, Q., et al. Multi-view Knowledge Graph Embedding for Entity Alignment. IJCAI, 2019.  
+Zhang, Q., et al. [Multi-view Knowledge Graph Embedding for Entity Alignment.](https://arxiv.org/pdf/1906.02390.pdf) IJCAI, 2019.  
 Pei, C., et al. Semi-Supervised Entity Alignment via Knowledge Graph Embedding with Awareness of Degree Difference. WWW, 2019.  
 Xu, Kun, et al. [Cross-lingual Knowledge Graph Alignment via Graph Matching Neural Network](https://arxiv.org/pdf/1905.11605). ACL, 2019.
