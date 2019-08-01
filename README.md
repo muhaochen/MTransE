@@ -61,5 +61,6 @@ Hao, J., et al. [Universal Representation Learning of Knowledge Bases by Jointly
 Guo, L., et al. [Learning to Exploit Long-term Relational Dependencies in Knowledge Graphs](https://arxiv.org/pdf/1905.04914.pdf). ICML, 2019.  
 Zhang, Q., et al. [Multi-view Knowledge Graph Embedding for Entity Alignment.](https://arxiv.org/pdf/1906.02390.pdf) IJCAI, 2019.  
 Pei, C., et al. Semi-Supervised Entity Alignment via Knowledge Graph Embedding with Awareness of Degree Difference. WWW, 2019.  
-Xu, Kun, et al. [Cross-lingual Knowledge Graph Alignment via Graph Matching Neural Network](https://arxiv.org/pdf/1905.11605). ACL, 2019.  
+Xu, Kun, et al. [Cross-lingual Knowledge Graph Alignment via Graph Matching Neural Network](https://arxiv.org/pdf/1905.11605). ACL, 2019.
+Cao, Yi., et al. [Multi-Channel Graph Neural Network for Entity Alignment.](https://www.aclweb.org/anthology/P19-1140) ACL, 2019.  
 Sun, Z., et al. TransEdge: Translating Relation-contextualized Embeddings for Knowledge Graphs. ISWC, 2019.
