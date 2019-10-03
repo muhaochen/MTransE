@@ -56,7 +56,6 @@ Sun, Zequn, et al. [Bootstrapping Entity Alignment with Knowledge Graph Embeddin
 Otani, Naoki, et al. [Cross-lingual Knowledge Projection Using Machine Translation and Target-side Knowledge Base Completion.](http://www.aclweb.org/anthology/C18-1128) COLING, 2018.  
 Wang, Zhichun, et al. [Cross-lingual Knowledge Graph Alignment via Graph Convolutional Networks.](http://aclweb.org/anthology/D18-1032) EMNLP, 2018.  
 Trsedya, Bayu D, et al. [Entity Alignment between Knowledge Graphs Using Attribute Embeddings.](http://www.ruizhang.info/publications/AAAI2019-Entity%20Alignment%20between%20Knowledge%20Graphs%20Using%20Attribute%20Embeddings.pdf) AAAI, 2019.  
-Qu, M., Tang, J., Bengio, Y. [Weakly-supervised Knowledge Graph Alignment with Adversarial Learning](https://arxiv.org/abs/1907.03179).  
 Hao, J., et al. [Universal Representation Learning of Knowledge Bases by Jointly Embedding Instances and Ontological Concepts.](http://yellowstone.cs.ucla.edu/~muhao/articles/KDD19_JOIE.pdf) KDD, 2019.  
 Guo, L., et al. [Learning to Exploit Long-term Relational Dependencies in Knowledge Graphs](https://arxiv.org/pdf/1905.04914.pdf). ICML, 2019.  
 Zhang, Q., et al. [Multi-view Knowledge Graph Embedding for Entity Alignment.](https://arxiv.org/pdf/1906.02390.pdf) IJCAI, 2019.  
@@ -69,3 +68,4 @@ Cao, Yi., et al. [Multi-Channel Graph Neural Network for Entity Alignment.](http
 Sun, Z., et al. TransEdge: Translating Relation-contextualized Embeddings for Knowledge Graphs. ISWC, 2019.  
 Yang, H., et al. [Aligning Cross-Lingual Entities with Multi-Aspect Information.](https://cs.uwaterloo.ca/~jimmylin/publications/YangHW_etal_EMNLP2019.pdf) EMNLP, 2019.  
 Wu, Y., et al. [Jointly Learning Entity and Relation Representations for Entity Alignment](https://arxiv.org/pdf/1909.09317.pdf) EMNLP, 2019.  
+Qu, M., Tang, J., Bengio, Y. [Weakly-supervised Knowledge Graph Alignment with Adversarial Learning](https://arxiv.org/abs/1907.03179).  
