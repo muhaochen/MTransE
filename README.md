@@ -67,4 +67,5 @@ Pei, C., et al. Semi-Supervised Entity Alignment via Knowledge Graph Embedding w
 Xu, Kun, et al. [Cross-lingual Knowledge Graph Alignment via Graph Matching Neural Network](https://arxiv.org/pdf/1905.11605). ACL, 2019.  
 Cao, Yi., et al. [Multi-Channel Graph Neural Network for Entity Alignment.](https://www.aclweb.org/anthology/P19-1140) ACL, 2019.  
 Sun, Z., et al. TransEdge: Translating Relation-contextualized Embeddings for Knowledge Graphs. ISWC, 2019.  
-Yang, H., et al. [Aligning Cross-Lingual Entities with Multi-Aspect Information.](https://cs.uwaterloo.ca/~jimmylin/publications/YangHW_etal_EMNLP2019.pdf) EMNLP, 2019
+Yang, H., et al. [Aligning Cross-Lingual Entities with Multi-Aspect Information.](https://cs.uwaterloo.ca/~jimmylin/publications/YangHW_etal_EMNLP2019.pdf) EMNLP, 2019.  
+Wu, Y., et al. [Jointly Learning Entity and Relation Representations for Entity Alignment](https://arxiv.org/pdf/1909.09317.pdf) EMNLP, 2019.  
