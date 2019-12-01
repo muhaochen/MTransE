@@ -46,7 +46,7 @@ Muhao Chen, Yingtao Tian, Mohan Yang, Carlo Zaniolo. Multilingual Knowledge Grap
     }
 
 ## Links
-The following links point to some recent follow-ups of this work.
+The following links point to some recent follow-ups of this work. Here is a paper list on this topic, maintained by Chengjiang and Zequn: [https://github.com/THU-KEG/Entity_Alignment_Papers](https://github.com/THU-KEG/Entity_Alignment_Papers)  
 
 Sun, Zequn, et al. [Cross-lingual entity alignment via joint attribute-preserving embedding.](https://iswc2017.semanticweb.org/wp-content/uploads/papers/MainProceedings/188.pdf) ISWC, 2017.  
 Zhu, Hao, et al. [Iterative entity alignment via joint knowledge embeddings.](https://www.researchgate.net/profile/Hao_Zhu31/publication/318830326_Iterative_Entity_Alignment_via_Joint_Knowledge_Embeddings/links/598afe10aca27243585a115e/Iterative-Entity-Alignment-via-Joint-Knowledge-Embeddings.pdf), IJCAI, 2017.  
@@ -69,3 +69,6 @@ Sun, Z., et al. TransEdge: Translating Relation-contextualized Embeddings for Kn
 Yang, H., et al. [Aligning Cross-Lingual Entities with Multi-Aspect Information.](https://cs.uwaterloo.ca/~jimmylin/publications/YangHW_etal_EMNLP2019.pdf) EMNLP, 2019.  
 Wu, Y., et al. [Jointly Learning Entity and Relation Representations for Entity Alignment](https://arxiv.org/pdf/1909.09317.pdf) EMNLP, 2019.  
 Qu, M., Tang, J., Bengio, Y. [Weakly-supervised Knowledge Graph Alignment with Adversarial Learning](https://arxiv.org/abs/1907.03179).  
+
+
+
